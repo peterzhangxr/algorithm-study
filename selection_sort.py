@@ -6,7 +6,7 @@
 arr = [3, 1, 2, 9, 4]
 
 
-def selection_order():
+def selection_sort():
     if len(arr) < 2:
         print('列表的长度必须大于2')
     else:
