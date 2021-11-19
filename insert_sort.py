@@ -13,9 +13,12 @@ def insert_sort():
 
 
 def swap(i, j):
-    tmp = arr[i]
-    arr[i] = arr[j]
-    arr[j] = tmp
+    # tmp = arr[i]
+    # arr[i] = arr[j]
+    # arr[j] = tmp
+    arr[i] = arr[i] ^ arr[j]
+    arr[j] = arr[i] ^ arr[j]
+    arr[i] = arr[i] ^ arr[j]
 
 
 insert_sort()
