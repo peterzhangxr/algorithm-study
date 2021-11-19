@@ -1,13 +1,13 @@
-# 冒泡排序
-# 比较相邻的两个元素的大小进行交换
+# 插入排序
+# 比较前面的元素的大小进行插入交换
 # 时间复杂度 O(N^2)
 # 空间复杂度 O(1)
 arr = [3, 1, 2, 9, 4, 3]
 
 
-def bubble_sort():
-    for i in reversed(range(len(arr))):
-        for j in range(i):
+def insert_sort():
+    for i in range(1, len(arr)):
+        for j in reversed(range(i)):
             if arr[j] > arr[j + 1]:
                 swap(j, j + 1)
 
@@ -18,5 +18,5 @@ def swap(i, j):
     arr[j] = tmp
 
 
-bubble_sort()
+insert_sort()
 print(arr)
