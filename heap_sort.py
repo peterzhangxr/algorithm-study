@@ -8,8 +8,10 @@ arr = [7, 1, 2, 8, 3, 6, 7, 8, 3, 9]
 
 
 def heap_sort():
-    for i in range(len(arr)):
-        heap_insert(i)
+    for i in reversed(range(len(arr))):
+        # heap_insert(i)
+        heapify(i, len(arr))
+
     heap_size = len(arr)
     swap(0, heap_size - 1)
     heap_size -= 1
