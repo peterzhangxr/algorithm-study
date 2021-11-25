@@ -75,11 +75,62 @@ def recursion_postorder(node):
     print('递归后序遍历', node.value)
 
 
+# 用非递归方式实现先序遍历
+def non_recursion_preorder(node):
+    stack = [node]
+    while len(stack) > 0:
+        cur = stack.pop()
+        print('非递归先序遍历', cur.value)
+        if cur.right is not None:
+            stack.append(cur.right)
+
+        if cur.left is not None:
+            stack.append(cur.left)
+
+
+# 用非递归实现中序遍历
+def non_recursion_inorder(node):
+    stack = [node]
+    cur = node
+    while len(stack) > 0:
+        while cur.left is not None:
+            stack.append(cur.left)
+            cur = cur.left
+
+        cur2 = stack.pop()
+        print('非递归中序遍历', cur2.value)
+        if cur2.right is not None:
+            stack.append(cur2.right)
+            cur = cur2.right
+
+
+# 用非递归实现后序遍历
+def non_recursion_postorder(node):
+    stack1 = [node]
+    stack2 = []
+    while len(stack1) > 0:
+        cur = stack1.pop()
+        stack2.append(cur)
+        if cur.left is not None:
+            stack1.append(cur.left)
+
+        if cur.right is not None:
+            stack1.append(cur.right)
+
+    while len(stack2) > 0:
+        cur = stack2.pop()
+        print('非递归后序遍历', cur.value)
+
+
 head = init_node()
 recursion_order(head)
 recursion_preorder(head)
 recursion_inorder(head)
 recursion_postorder(head)
+
+non_recursion_preorder(head)
+non_recursion_inorder(head)
+non_recursion_postorder(head)
 
 
 
