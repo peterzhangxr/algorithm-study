@@ -36,5 +36,62 @@ def init_node():
     return node1
 
 
-# 初始化一个二叉树
+# 递归序
+def recursion_order(node):
+    if node is None:
+        return
+
+    print('第一次', node.value)
+    recursion_order(node.left)
+    print('第二次', node.value)
+    recursion_order(node.right)
+    print('第三次', node.value)
+
+
+# 用递归实现先序遍历
+def recursion_preorder(node):
+    if node is None:
+        return
+    print('递归先序遍历', node.value)
+    recursion_preorder(node.left)
+    recursion_preorder(node.right)
+
+
+# 用递归实现中序遍历
+def recursion_inorder(node):
+    if node is None:
+        return
+    recursion_inorder(node.left)
+    print('递归中序遍历', node.value)
+    recursion_inorder(node.right)
+
+
+# 用递归实现后序遍历
+def recursion_postorder(node):
+    if node is None:
+        return
+    recursion_postorder(node.left)
+    recursion_postorder(node.right)
+    print('递归后序遍历', node.value)
+
+
 head = init_node()
+recursion_order(head)
+recursion_preorder(head)
+recursion_inorder(head)
+recursion_postorder(head)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
